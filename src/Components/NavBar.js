@@ -1,38 +1,29 @@
 import React, { useEffect } from 'react';
-import { Tabs,Tab,Box} from '@mui/material';
-import { Navigate, useNavigate } from "react-router-dom";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
-function LinkTab(props) {
-
+export const NavBar = () => {
     return (
-      <Tab
-        component="a"
-        onClick={(event) => {
-          event.preventDefault();
-        }}
-        {...props}
-      />
-    );
-  }
-export const NavBar = (props) => {
-    const [value, setValue] = React.useState(0);
-    let navigate = useNavigate();
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-        console.log('ne',event)
-        navigate('/SecondPage')
-      };
-    
-    return (
-        <Box sx={{ width: '100%' }}>
-
-        <Tabs aria-label="nav tabs example" value={value} onChange={handleChange}>
-            <LinkTab label="Page One" href="/" />
-            <LinkTab label="Page Two" href="/SecondPage" />
-            <LinkTab label="Page Three" href="/ThirdPage" />
-            <LinkTab label="Not Found" href="/NotFound" />
-        </Tabs>
-        </Box>
+        <Box sx={{ flexGrow: 1 }}>
+      		<AppBar position="static">
+        <Toolbar>
+          {/* <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton> */}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
     )
 }

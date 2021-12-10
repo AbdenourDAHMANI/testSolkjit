@@ -9,13 +9,23 @@ import {
 import {Home} from './Components/HomeScreenContainer'
 import { NavBar } from './Components/NavBar';
 import {TableExample}from './Components/Table'
+import { Container, CssBaseline } from '@mui/material';
+
+
+
+
 const App=()=> <BrowserRouter>
     <NavBar />
-    <Routes>
-    <Route  path="/" element={<Home/>}/>
-    <Route  path="/SecondPage" element={<TableExample/>}/>
-    <Route  path="/ThirdPage" element={<Home/>}/>
-    </Routes>
+	<CssBaseline>
+		<Container maxWidth="sm">
+			<Routes>
+				<Route  path="/" element={<Home/>}/>
+				<Route  path="/SecondPage" element={<TableExample/>}/>
+				<Route  path="/ThirdPage" element={<Home/>}/>
+			</Routes>
+		</Container>
+	</CssBaseline>
+    
   </BrowserRouter> 
 
 
